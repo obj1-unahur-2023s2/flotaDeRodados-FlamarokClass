@@ -1,6 +1,7 @@
 # Flotas de rodados
 
-En este ejercicio vamos a construir un modelo que pueda servir para la administración de las flotas de rodados que utilizan las distintas dependencias de la Municipalidad de Coronel Vallejos. 
+En este ejercicio vamos a construir un modelo que pueda servir para la administración de las flotas de rodados que utilizan las 
+distintas dependencias de la Municipalidad de Coronel Vallejos. 
 
 ## Etapa 1 - Rodados y dependencias
 
@@ -20,26 +21,32 @@ A continuación se describen los rodados que maneja la muncipalidad.
   - Todos los autos de este tipo con que cuenta la municipalidad son azules. <br>
 
 - **Una Trafic** (sí, una sola), que es reconfigurable, porque se le puede cambiar el interior y el motor.
-  - La municipalidad cuenta con dos _interiores_, uno **cómodo** (capacidad 5 pasajeros, peso 700 kg) y otro **popular** (capacidad 12 pasajeros, peso 1000 kg). La municipalidad tiene un solo interior de cada tipo.
-  - También ha comprado dos _motores_ para su Trafic, uno **pulenta** (que pesa 800 kg y permite una velocidad máxima de 130 km/h) y otro **batatón** (que pesa 500 kg y permite una velocidad máxima de 80 km/h). La municipalidad tiene un solo motor de cada tipo.
+  - La municipalidad cuenta con dos _interiores_, uno **cómodo** (capacidad 5 pasajeros, peso 700 kg) y otro **popular** 
+  (capacidad 12 pasajeros, peso 1000 kg). La municipalidad tiene un solo interior de cada tipo.
+  - También ha comprado dos _motores_ para su Trafic, uno **pulenta** (que pesa 800 kg y permite una velocidad máxima de 130 km/h) y 
+  otro **batatón** (que pesa 500 kg y permite una velocidad máxima de 80 km/h). La municipalidad tiene un solo motor de cada tipo.
   - Varias características de la Trafic dependen de qué interior y qué motor le hayan puesto:
     - La _capacidad_ de la Trafic es la del interior.
     - La _velocidad máxima_ es la que permite el motor.
     - El peso es 4000 kg más el peso del interior más el del motor.
   - Finalmente, digamos que la Trafic es de _color blanco_, independientemente del interior y el motor que tenga puestos. 
   
-- Varios **autos especiales** que son todos distintos entre sí. De cada uno de ellos se debe especificar capacidad, velocidad máxima, peso y color.
+- Varios **autos especiales** que son todos distintos entre sí. De cada uno de ellos se debe especificar capacidad, velocidad máxima, 
+peso y color.
 
 <br>
 
-Como dijimos, cada **dependencia** de la municipalidad maneja una _flota de rodados_. Un rodado puede estar compartido entre varias dependencias (ver test más abajo). 
+Como dijimos, cada **dependencia** de la municipalidad maneja una _flota de rodados_. Un rodado puede estar compartido entre varias 
+dependencias (ver test más abajo). 
 De cada dependencia importa también _cuántos empleados tiene_.
  
 Debe ser posible enviarle los siguientes mensajes a cada objeto que representa a una dependencia.
 - `agregarAFlota(rodado)` y `quitarDeFlota(rodado)`.
 - `pesoTotalFlota()`, la suma del peso de cada rodado afectado a la flota.
-- `estaBienEquipada()`, es verdadero si la flota tiene al menos 3 rodados, y además, _todos_ los rodados de la flota pueden ir al menos a 100 km/h.
-- `capacidadTotalEnColor(color)`, la cantidad total de personas que puede transportar la flota afectada a la dependencia, considerando solamente los rodados del color indicado.
+- `estaBienEquipada()`, es verdadero si la flota tiene al menos 3 rodados, y además, _todos_ los rodados de la flota pueden 
+ir al menos a 100 km/h.
+- `capacidadTotalEnColor(color)`, la cantidad total de personas que puede transportar la flota afectada a la dependencia, 
+considerando solamente los rodados del color indicado.
 - `colorDelRodadoMasRapido()`, eso.
 - `capacidadFaltante()`, que es el resultado de restar, de la cantidad de empleados, la capacidad sumada de los vehículos de la flota. 
 - `esGrande()`, la condición es que la dependencia tenga al menos 40 empleados y 5 rodados.
@@ -52,15 +59,20 @@ Armar un test en el que hay que se definen dos dependencias: deportes (45 emplea
 En este test debe definirse un rodado al que llamaremos _cachito_; o sea, definir `var cachito = ...`.
 Este rodado debe ser un Corsa de color rojo.
 	
-La flota de deportes incluye a: `cachito`, un Corsa azul, un Corsa verde, un Kwid con el tanque adicional puesto; y un auto especial con estas características: capacidad 5 pasajeros, velocidad máxima 160 km/h, peso 1200 kg, color beige.
+La flota de deportes incluye a: `cachito`, un Corsa azul, un Corsa verde, un Kwid con el tanque adicional puesto; y un auto especial 
+con estas características: capacidad 5 pasajeros, velocidad máxima 160 km/h, peso 1200 kg, color beige.
 	
-Por su parte, cultura cuenta con: `cachito`; dos Kwid con el tanque adicional puesto; un Kwid más, este sin el tanque adicional;  y la Trafic, configurada con el interior popular y el motor batatón.
+Por su parte, cultura cuenta con: `cachito`; dos Kwid con el tanque adicional puesto; un Kwid más, este sin el tanque adicional;  
+y la Trafic, configurada con el interior popular y el motor batatón.
 	
 Notar que `cachito` forma parte de la flota de _ambas_ dependencias.
 
-Para cada dependencia, hacer asserts sobre: el peso total de la flota, si está o no bien equipada, la capacidad total en color azul, el color del rodado más rápido, si es grande o no, y la capacidad faltante. 
+Para cada dependencia, hacer asserts sobre: el peso total de la flota, si está o no bien equipada, la capacidad total en color azul, el 
+color del rodado más rápido, si es grande o no, y la capacidad faltante. 
 
-Va una ayudita: la capacidad faltante de deportes es de 25 personas (la flota puede llevar: 12 personas en los 3 Corsa, más 3 del Kwid y 5 del auto especial; total 20), mientras que la de cultura es de 5 personas (puede llevar en total 26: 6 de los Kwid con tanque adicional, más 4 de la Kwid sin tanque, más 4 de cachito, más 12 de la Trafic dado que tiene el interior popular).	
+Va una ayudita: la capacidad faltante de deportes es de 25 personas (la flota puede llevar: 12 personas en los 3 Corsa, más 3 del Kwid 
+y 5 del auto especial; total 20), mientras que la de cultura es de 5 personas (puede llevar en total 26: 6 de los Kwid con tanque adicional, 
+más 4 de la Kwid sin tanque, más 4 de cachito, más 12 de la Trafic dado que tiene el interior popular).	
 
 <br/>
 
@@ -79,9 +91,12 @@ Para que un auto pueda satisfacer un pedido se tienen que dar tres condiciones:
 - que la capacidad del auto dé para la cantidad de pasajeros del viaje; y 
 - que el auto no sea de un color incompatible para el viaje.
 
-P.ej. consideremos al auto al que llamamos `cachito` en el test de la etapa 1 (recordemos: capacidad 4 pasajeros, velocidad máxima 150 km/h, color rojo).
-- este auto puede satisfacer un pedido de 960 kms con tiempo máximo de 8 horas (lo que da una velocidad requerida de 120 km/h), para 4 pasajeros donde los colores incompatibles son azul y negro.
-- si agregamos el rojo a los colores incompatibles, o cambiamos la cantidad de pasajeros a 6, entonces `cachito` ya no puede satisfacer el pedido.
+P.ej. consideremos al auto al que llamamos `cachito` en el test de la etapa 1 (recordemos: capacidad 4 pasajeros, 
+velocidad máxima 150 km/h, color rojo).
+- este auto puede satisfacer un pedido de 960 kms con tiempo máximo de 8 horas (lo que da una velocidad requerida de 120 km/h), 
+para 4 pasajeros donde los colores incompatibles son azul y negro.
+- si agregamos el rojo a los colores incompatibles, o cambiamos la cantidad de pasajeros a 6, entonces `cachito` ya no puede satisfacer 
+el pedido.
 - lo mismo si cambiamos el tiempo máximo a 6 horas, porque eso nos daría una velocidad requerida de 160 km/h.
 
 Armar un test que compruebe esta especificación.
